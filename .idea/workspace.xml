@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="509f1bc9-5744-4b8e-ae92-7d1f11077a76" name="Default" comment="" />
+    <list default="true" id="509f1bc9-5744-4b8e-ae92-7d1f11077a76" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test_case.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_calc.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,27 +16,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/verdureria$Unittests_for_test_calc_TestVerdureria_test_sign.coverage" NAME="Unittests for test_calc.TestVerdureria.test_sign Coverage Results" MODIFIED="1513398154978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/verdureria$Unittests_for_test_TestVerdureria.coverage" NAME="Unittests for test.TestVerdureria Coverage Results" MODIFIED="1513398483097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/verdureria$Unittests_for_test_TestVerdureria_test_sum.coverage" NAME="Unittests for test.TestVerdureria.test_sum Coverage Results" MODIFIED="1513398602075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/verdureria$Unittests_in_test_case_py.coverage" NAME="Unittests in test_case.py Coverage Results" MODIFIED="1513399157277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/verdureria$Unittests_in_test_py.coverage" NAME="Unittests in test.py Coverage Results" MODIFIED="1513392155502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/verdureria$Unittests_in_test_calc_py.coverage" NAME="Unittests in test_calc.py Coverage Results" MODIFIED="1513392418181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/verdureria$Unittests_for_test_Test_test_sum.coverage" NAME="Unittests for test.Test.test_sum Coverage Results" MODIFIED="1513392238549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/verdureria$Unittests_for_test_calc_TestCalc.coverage" NAME="Unittests for test_calc.TestCalc Coverage Results" MODIFIED="1513392596136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/verdureria$main.coverage" NAME="main Coverage Results" MODIFIED="1513398187710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/verdureria$Unittests_in_test_calc_py.coverage" NAME="Unittests in test_calc.py Coverage Results" MODIFIED="1513398142012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/verdureria$Unittests_in_test_py__1_.coverage" NAME="Unittests in test.py (1) Coverage Results" MODIFIED="1513399032297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/verdureria$Unittests_for_test_Test_test_sum.coverage" NAME="Unittests for test.Test.test_sum Coverage Results" MODIFIED="1513398888357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_calc.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_calc.py">
+      <file leaf-file-name="test_case.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/test_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            <state relative-caret-position="272">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -47,14 +60,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/test_case.py" />
-        <option value="$PROJECT_DIR$/test/test.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/test_calc.py" />
+        <option value="$PROJECT_DIR$/test/test_calc.py" />
+        <option value="$PROJECT_DIR$/test/test.py" />
+        <option value="$PROJECT_DIR$/test/test_case.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -69,6 +86,7 @@
     <option name="width" value="697" />
     <option name="height" value="775" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -106,6 +124,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pérez Meneses\PycharmProjects\verdureria\test" />
       <recent name="C:\Users\Pérez Meneses\PycharmProjects\verdureria" />
     </key>
   </component>
@@ -121,38 +140,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_calc.py">
-    <configuration name="Unittests for test.Test.test_sum" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="verdureria" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.Test.test_sum&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
-    <configuration name="Unittests in test_calc.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="verdureria" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_calc.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration name="Unittests in test.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in test_case.py">
+    <configuration name="Unittests for test.TestVerdureria" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -164,19 +153,83 @@
       <module name="verdureria" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test.py&quot;" />
+      <option name="_new_target" value="&quot;test.TestVerdureria&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="Unittests for test.TestVerdureria.test_sum" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="verdureria" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.TestVerdureria.test_sum&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="Unittests for test.Test.test_sum" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="verdureria" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.Test.test_sum&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="Unittests in test_case.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="verdureria" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_case.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test.py" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for test.Test.test_sum" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_calc.py" />
+    <configuration name="Unittests in test.py (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="verdureria" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test.py (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for test.TestVerdureria" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for test.TestVerdureria.test_sum" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test.Test.test_sum" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_case.py" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_calc.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test.py" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_case.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test.py (1)" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for test.Test.test_sum" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test.TestVerdureria.test_sum" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test.TestVerdureria" />
       </list>
     </recent_temporary>
   </component>
@@ -194,29 +247,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_Test_test_sum - 2017.12.15 at 20h 43m 43s.xml">
-      <configuration name="Unittests for test.Test.test_sum" configurationId="tests" />
+    <history-entry file="Unittests_in_test_case_py - 2017.12.15 at 22h 37m 19s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_Test_test_sum - 2017.12.15 at 20h 43m 59s.xml">
-      <configuration name="Unittests for test.Test.test_sum" configurationId="tests" />
+    <history-entry file="Unittests_in_test_case_py - 2017.12.15 at 22h 38m 23s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_calc_py - 2017.12.15 at 20h 46m 43s.xml">
-      <configuration name="Unittests in test_calc.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_case_py - 2017.12.15 at 22h 38m 53s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_calc_py - 2017.12.15 at 20h 46m 58s.xml">
-      <configuration name="Unittests in test_calc.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_case_py - 2017.12.15 at 22h 39m 04s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_py - 2017.12.15 at 20h 40m 57s.xml">
-      <configuration name="Unittests in test.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_case_py - 2017.12.15 at 22h 39m 21s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_py - 2017.12.15 at 20h 41m 56s.xml">
-      <configuration name="Unittests in test.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_py_(1) - 2017.12.15 at 22h 35m 15s.xml">
+      <configuration name="Unittests in test.py (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_py - 2017.12.15 at 20h 42m 07s.xml">
-      <configuration name="Unittests in test.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_py_(1) - 2017.12.15 at 22h 35m 21s.xml">
+      <configuration name="Unittests in test.py (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_py - 2017.12.15 at 20h 42m 36s.xml">
-      <configuration name="Unittests in test.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_py_(1) - 2017.12.15 at 22h 35m 27s.xml">
+      <configuration name="Unittests in test.py (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_py_(1) - 2017.12.15 at 22h 35m 36s.xml">
+      <configuration name="Unittests in test.py (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_py_(1) - 2017.12.15 at 22h 37m 12s.xml">
+      <configuration name="Unittests in test.py (1)" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -226,8 +285,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -250,7 +309,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -262,21 +323,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/test/test_calc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_calc.py">
+    <entry file="file://$PROJECT_DIR$/test/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
