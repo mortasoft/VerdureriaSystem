@@ -23,5 +23,24 @@ def ingresoAlSistema():
 
 
 def seleccionarOpciones():
-    opcion = int(input("Seleccione la opción deseada: "))
+    opcion = 0
+    while opcion != 6:
+        opcion = int(input("Seleccione la opción deseada: \n1. Mantenimiento.\n2. Cotización.3. Venta de productos." +
+                           "\n4. Informe de ventas diarias.\n5. Informe de ganancias diarias.\n6. Salir"))
+        if opcion == 1:
+            print("mantenimiento")
+            return "mantenimiento"
+        elif opcion == 2:
+            print("cotizacion")
+            return "cotizacion"
+        elif opcion == 3:
+            return "venta de productos"
+        elif opcion == 4:
+            return "informe de ventas diarias"
+        elif opcion == 5:
+            return "informe de ganancias diarias"
+        elif opcion == 6:
+            return "salir"
 
+
+seleccionarOpciones()
