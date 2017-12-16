@@ -1,3 +1,6 @@
+import datetime
+
+
 def sum(x, y):
     return x + y
 
@@ -37,8 +40,7 @@ def seleccionarOpciones():
         if opcion == 1:
             opcionDeMantenimiento()
         elif opcion == 2:
-            print("cotizacion")
-            return "cotizacion"
+            opcionCotizacion()
         elif opcion == 3:
             return "venta de productos"
         elif opcion == 4:
@@ -91,7 +93,7 @@ def ingresoDeProductos(nombreProductoSeleccionado):
         'fecha_vencimiento': opcionFechaDeVencimientoDelPrecioDeVenta
     }
     inventarioProductos.append(nuevoProducto)
-    opcionDeMantenimiento()
+    seleccionarOpciones()
 
 
 def modificacionDeInventarios(producto):
@@ -107,7 +109,7 @@ def modificacionDeInventarios(producto):
                 inventarioProductos[cont]['kilos'] = inv_inicial
                 print("\nLa cantidad de este producto es: " + str(inventarioProductos[cont]['kilos']))
             cont = cont + 1
-        opcionDeMantenimiento()
+        seleccionarOpciones()
     elif opcion == 2:
         opcionRemover = int(input("Digite la cantidad de unidades que desea remover: "))
         cont = 0
@@ -118,7 +120,7 @@ def modificacionDeInventarios(producto):
                 inventarioProductos[cont]['kilos'] = inv_inicial
                 print("\nLa cantidad de este producto es: " + str(inventarioProductos[cont]['kilos']))
             cont = cont + 1
-        opcionDeMantenimiento()
+        seleccionarOpciones()
     else:
         modificacionDeInventarios(producto)
 
@@ -137,6 +139,34 @@ def modificacionDePrecios(producto):
                   "\nEL nuevo precio del kilo de compra es: " + str(inventarioProductos[cont]['precio_compra']))
         cont = cont + 1
     opcionDeMantenimiento()
+
+
+def opcionCotizacion():
+    global productos, inventarioProductos
+    opcionNumCotizacion = int(input("Bienvenido a la realización de la cotización.\nPor favor, digite el número de " +
+                                    "cotización"))
+    nombreDelCliente = input("\nDigite el nombre del cliente")
+    cedulaDelCliente = int(input("\nDigite el número de cédula del cliente"))
+    correoDelCliente = input("\nDigite el coreo electrónico del cliente")
+    productoDeseado = int(
+        input("\nSeleccione el producto que desea cotizar: \n1.Aguacate. 2.Apio. 3.Ayote. 4.Bananos. 5.Cerezas" +
+              "\n6.Chile. 7.Fresas. 8.Kiwi. 9.Lechuga. 10.Limones.\n11.Maíz. 12.Manzanas. 13.Naranjas 14.Papa 15.Papayas" +
+              "\n16Pepino. 17.Plátano. 18.Sandías 19.Tomates. 20.Uvas. 21.Zanahorias"))
+
+    opcionNombreProducto = productos[productoDeseado]
+
+    opcionKilos = int(input("\n¿Cuantos kilos desea añadir a la cotización?"))
+    cont = 0
+    for i in inventarioProductos:
+        if opcionNombreProducto == inventarioProductos[cont]['producto']:
+            precioVenta = inventarioProductos[cont]['precio_venta']
+        cont = cont + 1
+    totalCotizacion = opcionKilos * precioVenta
+    totalCotizacionConImpuestos = (totalCotizacion * 113) / 100
+    print("Verduleria la Vencedora S.A.\nCajero: admin.\nN° Cotización: " + str(opcionNumCotizacion) + "\nFecha: " +
+          str(datetime.datetime.now()) + "\nCliente: " + nombreDelCliente + "\nProducto: " + opcionNombreProducto +
+          "\nKilos: " + str(opcionKilos) + "\nTotal sin impuestos: " + str(totalCotizacion) + "\nTotal con impuestos: " +
+          str(totalCotizacionConImpuestos) + "\nEsta cotización expira en 4 días.\n")
 
 
 # seleccionarOpciones()
