@@ -67,19 +67,27 @@ def opcionDeMantenimiento():
 
 
 def ingresoDeProductos(productoSeleccionado):
+    global inventario
     opcionKilos = int(input("Digite: \n-¿Cuantos kilos desea añadir al inventario?"))
     opcionPrecioDeCompraDelKilo = int(input("\n-El precio de compra del kilo."))
     opcionPrecioDeVentaDelKilo = int(input("\n-El precio de venta del kilo."))
     opcionFechaDeVencimientoDelPrecioDeVenta = input(
         "\n-Para finalizar, digite la fecha de vencimiento del precio de venta")
 
+    print(
+        "El producto es: " + productoSeleccionado +
+        ".\nEl nuevo inventario del producto es: " + str(opcionKilos) + ".\nEl nuevo precio de compra es: " + str(
+            opcionPrecioDeCompraDelKilo) +
+        ".\nEl nuevo precio de venta es: " + str(
+            opcionPrecioDeVentaDelKilo) + ".\nLa fecha de vencimiento del precio de venta es: " +
+        opcionFechaDeVencimientoDelPrecioDeVenta)
+
     productoNuevo = {'nombre': productoSeleccionado,
                      "kilos": opcionKilos,
                      "precio_de_compra": opcionPrecioDeCompraDelKilo,
                      "precio_de_venta": opcionPrecioDeVentaDelKilo,
                      'fecha_vencimiento': opcionFechaDeVencimientoDelPrecioDeVenta}
-    print(productoNuevo)
-    return productoNuevo
+    inventario.append(productoNuevo)
 
 
 def modificacionDeProductos(producto):
@@ -89,5 +97,6 @@ def modificacionDeProductos(producto):
 def modificacionDePrecios(producto):
     return None
 
+
 # seleccionarOpciones()
-#opcionDeMantenimiento()
+opcionDeMantenimiento()
