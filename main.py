@@ -128,6 +128,15 @@ def modificacionDePrecios(producto):
     opcionPrecioDeCompra = int(
         input("Digite las siguiente variables a como desea que sean modificadas: \n-Precio de comora: "))
     opcionPrecioDeVenta = int(input("\n- y el precio de venta para un kilo de producto: "))
+    cont = 0
+    for i in inventarioProductos:
+        if producto == inventarioProductos[cont]['producto']:
+            inventarioProductos[cont]['precio_compra'] = opcionPrecioDeCompra
+            inventarioProductos[cont]['precio_venta'] = opcionPrecioDeVenta
+            print("\nEl nuevo precio del kilo de venta es: " + str(inventarioProductos[cont]['precio_venta']) +
+                  "\nEL nuevo precio del kilo de compra es: " + str(inventarioProductos[cont]['precio_compra']))
+        cont = cont + 1
+    opcionDeMantenimiento()
 
 
 # seleccionarOpciones()
