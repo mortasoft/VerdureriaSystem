@@ -5,7 +5,11 @@ def sum(x, y):
 credencialesDeIngreso = [{'usuario': "admin", "contraseña": "admin"}]
 productos = ['Aguacate', 'Apio', 'Ayote', 'Bananos', 'Cerezas', 'Chile', 'Fresas', 'Kiwi', 'Lechuga', 'Limones', 'Maíz',
              'Manzanas', 'Naranjas', 'Papa', 'Papayas', 'Pepino', 'Plátano', 'Sandías', 'Tomates', 'Uvas', 'Zanahorias']
-inventario = []
+
+inventarioProductos = []
+inventarioKilosProductos = []
+inventarioPrecioDeCompra = []
+inventarioPrecioDeVenta = []
 
 
 def ingresoAlSistema():
@@ -48,26 +52,23 @@ def seleccionarOpciones():
 def opcionDeMantenimiento():
     global productos
     opcionProducto = int(
-        input("Seleccione el producto que desea trabajar: \n1.Aguacate. 2.Apio. 3.Ayote. 4.Bananos. 5.Cerezas" +
+        input("\nSeleccione el producto que desea trabajar: \n1.Aguacate. 2.Apio. 3.Ayote. 4.Bananos. 5.Cerezas" +
               "\n6.Chile. 7.Fresas. 8.Kiwi. 9.Lechuga. 10.Limones.\n11.Maíz. 12.Manzanas. 13.Naranjas 14.Papa 15.Papayas" +
               "\n16Pepino. 17.Plátano. 18.Sandías 19.Tomates. 20.Uvas. 21.Zanahorias"))
-    opcionProducto = productos[opcionProducto]
+    opcionNombreProducto = productos[opcionProducto]
     opcionAccionPorRealizar = int(
         input("Para el producto que seleccionó ¿qué acción desea realizar?\n1. Ingreso de productos." +
               "\n2. Modificación de productos.\n3. Modificación de precios."))
     if opcionAccionPorRealizar == 1:
-        ingresoDeProductos(opcionProducto)
-        # print("prod " + str(opcionProducto) + " accion " + str(opcionAccionPorRealizar))
+        ingresoDeProductos(opcionNombreProducto)
     elif opcionAccionPorRealizar == 2:
-        modificacionDeProductos(opcionProducto)
-        # print("prod " + str(opcionProducto) + " accion " + str(opcionAccionPorRealizar))
+        modificacionDeInventarios(opcionNombreProducto)
     elif opcionAccionPorRealizar == 3:
-        modificacionDePrecios(opcionProducto)
-        # print("prod " + str(opcionProducto) + " accion " + str(opcionAccionPorRealizar))
+        modificacionDePrecios(opcionNombreProducto)
 
 
-def ingresoDeProductos(productoSeleccionado):
-    global inventario
+def ingresoDeProductos(nombreProductoSeleccionado):
+    global inventarioProductos
     opcionKilos = int(input("Digite: \n-¿Cuantos kilos desea añadir al inventario?"))
     opcionPrecioDeCompraDelKilo = int(input("\n-El precio de compra del kilo."))
     opcionPrecioDeVentaDelKilo = int(input("\n-El precio de venta del kilo."))
@@ -75,27 +76,58 @@ def ingresoDeProductos(productoSeleccionado):
         "\n-Para finalizar, digite la fecha de vencimiento del precio de venta")
 
     print(
-        "El producto es: " + productoSeleccionado +
+        "El producto es: " + nombreProductoSeleccionado +
         ".\nEl nuevo inventario del producto es: " + str(opcionKilos) + ".\nEl nuevo precio de compra es: " + str(
             opcionPrecioDeCompraDelKilo) +
         ".\nEl nuevo precio de venta es: " + str(
             opcionPrecioDeVentaDelKilo) + ".\nLa fecha de vencimiento del precio de venta es: " +
         opcionFechaDeVencimientoDelPrecioDeVenta)
 
-    productoNuevo = {'nombre': productoSeleccionado,
-                     "kilos": opcionKilos,
-                     "precio_de_compra": opcionPrecioDeCompraDelKilo,
-                     "precio_de_venta": opcionPrecioDeVentaDelKilo,
-                     'fecha_vencimiento': opcionFechaDeVencimientoDelPrecioDeVenta}
-    inventario.append(productoNuevo)
+    nuevoProducto = {
+        'producto': nombreProductoSeleccionado,
+        'kilos': opcionKilos,
+        'precio_compra': opcionPrecioDeCompraDelKilo,
+        'precio_venta': opcionPrecioDeVentaDelKilo,
+        'fecha_vencimiento': opcionFechaDeVencimientoDelPrecioDeVenta
+    }
+    inventarioProductos.append(nuevoProducto)
+    opcionDeMantenimiento()
 
 
-def modificacionDeProductos(producto):
-    return None
+def modificacionDeInventarios(producto):
+    global inventarioProductos
+    opcion = int(input("Digite si desea: \n1.Agregar\n2.Remover"))
+    if opcion == 1:
+        opcionAgregar = int(input("Digite la cantidad de unidades que desea agregar: "))
+        cont = 0
+        for i in inventarioProductos:
+            if producto == inventarioProductos[cont]['producto']:
+                inv_inicial = inventarioProductos[cont]['kilos']
+                inv_inicial = inv_inicial + opcionAgregar
+                inventarioProductos[cont]['kilos'] = inv_inicial
+                print("\nLa cantidad de este producto es: " + str(inventarioProductos[cont]['kilos']))
+            cont = cont + 1
+        opcionDeMantenimiento()
+    elif opcion == 2:
+        opcionRemover = int(input("Digite la cantidad de unidades que desea remover: "))
+        cont = 0
+        for i in inventarioProductos:
+            if producto == inventarioProductos[cont]['producto']:
+                inv_inicial = inventarioProductos[cont]['kilos']
+                inv_inicial = inv_inicial - opcionRemover
+                inventarioProductos[cont]['kilos'] = inv_inicial
+                print("\nLa cantidad de este producto es: " + str(inventarioProductos[cont]['kilos']))
+            cont = cont + 1
+        opcionDeMantenimiento()
+    else:
+        modificacionDeInventarios(producto)
 
 
 def modificacionDePrecios(producto):
-    return None
+    global inventarioProductos
+    opcionPrecioDeCompra = int(
+        input("Digite las siguiente variables a como desea que sean modificadas: \n-Precio de comora: "))
+    opcionPrecioDeVenta = int(input("\n- y el precio de venta para un kilo de producto: "))
 
 
 # seleccionarOpciones()
