@@ -48,9 +48,10 @@ def ingresoAlSistema():
                          credencialesDeIngreso['contraseña'] == contraseña]
     if len(validarUsuario) == 0 or len(validarContraseña) == 0:
         print("Su usuario o contraseña es incorrecto, por favor intente de nuevo")
+        seleccionarOpciones()
         return "invalido"
     else:
-        print("bueno")
+        seleccionarOpciones()
         return "loggeado"
         # LUEGO DEBEMOS LLAMAR AL METODO DE OPCIONES...
 
@@ -58,8 +59,9 @@ def ingresoAlSistema():
 def seleccionarOpciones():
     opcion = 0
     while opcion != 6:
-        opcion = int(input("\nSeleccione la opción deseada: \n1. Mantenimiento.\n2. Cotización.3. Venta de productos." +
-                           "\n4. Informe de ventas diarias.\n5. Informe de ganancias diarias.\n6. Salir\n"))
+        opcion = int(
+            input("\nSeleccione la opción deseada: \n1. Mantenimiento.\n2. Cotización.\n3. Venta de productos." +
+                  "\n4. Informe de ventas diarias.\n5. Informe de ganancias diarias.\n6. Salir\n"))
         if opcion == 1:
             opcionDeMantenimiento()
         elif opcion == 2:
@@ -67,7 +69,7 @@ def seleccionarOpciones():
         elif opcion == 3:
             opcionVentaDeProductos()
         elif opcion == 4:
-            return "informe de ventas diarias"
+            opcionInformeDeVentasDiarias()
         elif opcion == 5:
             return "informe de ganancias diarias"
         elif opcion == 6:
@@ -180,6 +182,7 @@ def opcionCotizacion():
 
     opcionKilos = int(input("\n¿Cuantos kilos desea añadir a la cotización?"))
     cont = 0
+    precioVenta = 0
     for i in inventarioProductos:
         if opcionNombreProducto == inventarioProductos[cont]['producto']:
             precioVenta = inventarioProductos[cont]['precio_venta']
@@ -225,9 +228,11 @@ def opcionVentaDeProductos():
                 # actualizamos la lista de ventas dirias
                 for j in inventarioDeVentasDiarias:
                     if inventarioDeCotizaciones[cont]['producto'] == inventarioDeVentasDiarias[cont2]['producto']:
-                        inventarioDeVentasDiarias[cont2]['cantidad'] = inventarioDeCotizaciones[cont]['kilos']
-                        inventarioDeVentasDiarias[cont2]['valor'] = inventarioDeCotizaciones[cont][
-                            'total_sin_impuestos']
+                        inventarioDeVentasDiarias[cont2]['cantidad'] = inventarioDeVentasDiarias[cont2]['cantidad'] + \
+                                                                       inventarioDeCotizaciones[cont]['kilos']
+                        inventarioDeVentasDiarias[cont2]['valor'] = inventarioDeVentasDiarias[cont2]['valor'] + \
+                                                                    inventarioDeCotizaciones[cont][
+                                                                        'total_sin_impuestos']
                     cont2 = cont2 + 1
             cont = cont + 1
     elif cotizacion == "no":
@@ -256,13 +261,41 @@ def opcionVentaDeProductos():
         # actualizamos la lista de ventas dirias
         for j in inventarioDeVentasDiarias:
             if nombreProducto == inventarioDeVentasDiarias[cont2]['producto']:
-                inventarioDeVentasDiarias[cont2]['cantidad'] = cantidadDeseasa
-                inventarioDeVentasDiarias[cont2]['valor'] = totalCompra
+                inventarioDeVentasDiarias[cont2]['cantidad'] = inventarioDeVentasDiarias[cont2]['cantidad'] + \
+                                                               cantidadDeseasa
+                inventarioDeVentasDiarias[cont2]['valor'] = inventarioDeVentasDiarias[cont2]['valor'] + totalCompra
             cont2 = cont2 + 1
 
     else:
         opcionVentaDeProductos()
 
 
+def opcionInformeDeVentasDiarias():
+    global inventarioDeVentasDiarias
+    print("\nBienvenido al informe de ventas diarias\n")
+    cont = 0
+    productoMenosVendido = 100
+    productoMasVendido = 0
+    totalDeProductosVendidos = 0
+    for i in inventarioDeVentasDiarias:
+        print("Producto: " + inventarioDeVentasDiarias[cont]['producto'] + "\t\tCantidad vendida: " +
+              str(inventarioDeVentasDiarias[cont]['cantidad']) + "\tValor: " +
+              str(inventarioDeVentasDiarias[cont]['valor']) + "\n")
+        # para buscar el menos vendido
+        if inventarioDeVentasDiarias[cont]['cantidad'] <= productoMenosVendido:
+            productoMenosVendido = inventarioDeVentasDiarias[cont]['cantidad']
+            nombreDelProductoMenosVendido = inventarioDeVentasDiarias[cont]['producto']
+        # para buscar el más vendido
+        if inventarioDeVentasDiarias[cont]['cantidad'] >= productoMasVendido:
+            productoMasVendido = inventarioDeVentasDiarias[cont]['cantidad']
+            nombreDelProductoMasVendido = inventarioDeVentasDiarias[cont]['producto']
+        # para sumar todas las cantidades vendidas
+        totalDeProductosVendidos = totalDeProductosVendidos + inventarioDeVentasDiarias[cont]['cantidad']
+        cont = cont + 1
+    print("Producto más vendido: " + nombreDelProductoMasVendido)
+    print("\nProducto menos vendido: " + nombreDelProductoMenosVendido)
+    print("\nTotal productos vendidos: " + str(totalDeProductosVendidos))
+
+
 # seleccionarOpciones()
-opcionDeMantenimiento()
+ingresoAlSistema()
