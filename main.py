@@ -15,6 +15,27 @@ inventarioPrecioDeCompra = []
 inventarioPrecioDeVenta = []
 
 inventarioDeCotizaciones = []
+inventarioDeVentasDiarias = [{'producto': 'Aguacate', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Apio', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Ayote', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Bananos', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Cerezas', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Chile', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Fresas', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Kiwi', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Lechuga', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Limones', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Maíz', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Manzanas', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Naranjas', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Papa', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Papayas', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Pepino', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Plátano', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Sandías', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Tomates', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Uvas', 'cantidad': 0, 'valor': 0},
+                             {'producto': 'Zanahorias', 'cantidad': 0, 'valor': 0}]
 
 
 def ingresoAlSistema():
@@ -166,7 +187,7 @@ def opcionCotizacion():
     totalCotizacion = opcionKilos * precioVenta
     totalCotizacionConImpuestos = (totalCotizacion * 113) / 100
     fechaExacta = datetime.datetime.now()
-    print("Verduleria la Vencedora S.A.\nCajero: admin.\nN° Cotización: " + str(opcionNumCotizacion) + "\nFecha: " +
+    print("\nVerduleria la Vencedora S.A.\nCajero: admin.\nN° Cotización: " + str(opcionNumCotizacion) + "\nFecha: " +
           str(fechaExacta) + "\nCliente: " + nombreDelCliente + "\nProducto: " + opcionNombreProducto +
           "\nKilos: " + str(opcionKilos) + "\nTotal sin impuestos: " + str(
         totalCotizacion) + "\nTotal con impuestos: " +
@@ -185,18 +206,60 @@ def opcionCotizacion():
 
 
 def opcionVentaDeProductos():
-    global inventarioDeCotizaciones
+    global inventarioDeCotizaciones, inventarioDeVentasDiarias, productos
     cotizacion = input("\nBienvenido a la venta de producto.\n¿Al cliente se le realizó una cotización?\n")
     if cotizacion == "si":
         numCotizacion = int(input("\nDigita el número de la cotización\n"))
         cont = 0
         for i in inventarioDeCotizaciones:
-            print("verrrr " + str(inventarioDeCotizaciones[cont]['num_cotizacion']))
+            # venta confirmada por cotizacion
             if numCotizacion == inventarioDeCotizaciones[cont]['num_cotizacion']:
-                print("\nSE VENDIO\n")
+                print("\nVerdulería la Vencedora S.A\nCajero: admin\nCotización número: " + str(numCotizacion) +
+                      "\nFecha: " + str(datetime.datetime.now()) + "\nCliente: " +
+                      inventarioDeCotizaciones[cont]['cliente'] + "\nProducto: " +
+                      inventarioDeCotizaciones[cont]['producto'] + "\nKilos: " +
+                      str(inventarioDeCotizaciones[cont]['kilos']) + "\nTotal sin impuestos: " +
+                      str(inventarioDeCotizaciones[cont]['total_sin_impuestos']) + "\nTotal con impuestos: " +
+                      str(inventarioDeCotizaciones[cont]['total_con_impuestos']) + "\nForma de pago: Efectivo.\n")
+                cont2 = 0
+                # actualizamos la lista de ventas dirias
+                for j in inventarioDeVentasDiarias:
+                    if inventarioDeCotizaciones[cont]['producto'] == inventarioDeVentasDiarias[cont2]['producto']:
+                        inventarioDeVentasDiarias[cont2]['cantidad'] = inventarioDeCotizaciones[cont]['kilos']
+                        inventarioDeVentasDiarias[cont2]['valor'] = inventarioDeCotizaciones[cont][
+                            'total_sin_impuestos']
+                    cont2 = cont2 + 1
             cont = cont + 1
     elif cotizacion == "no":
-        return None
+        nombreDelCliente = input("\nDigite el nombre del cliente\n")
+        cedulaDelCliente = input("\nDigite la cédula del cliente\n")
+        productoDeseado = int(
+            input("\nSeleccione el producto que desea comprar: \n1.Aguacate. 2.Apio. 3.Ayote. 4.Bananos. 5.Cerezas" +
+                  "\n6.Chile. 7.Fresas. 8.Kiwi. 9.Lechuga. 10.Limones.\n11.Maíz. 12.Manzanas. 13.Naranjas 14.Papa 15.Papayas" +
+                  "\n16Pepino. 17.Plátano. 18.Sandías 19.Tomates. 20.Uvas. 21.Zanahorias"))
+        global productos
+        nombreProducto = productos[productoDeseado]
+        cantidadDeseasa = int(input("\nDigite la cantidad de kilos para este producto " + str(nombreProducto)))
+
+        cont = 0
+        for i in inventarioProductos:
+            if nombreProducto == inventarioProductos[cont]['producto']:
+                precioVenta = inventarioProductos[cont]['precio_venta']
+            cont = cont + 1
+        totalCompra = cantidadDeseasa * precioVenta
+        totalCompraConImpuesto = (totalCompra * 113) / 100
+        print("\nVerdulería la Vencedora S.A\nCajero: admin." +
+              "\nFecha: " + str(datetime.datetime.now()) + "\nCliente: " + nombreDelCliente + "\nProducto: " +
+              str(nombreProducto) + "\nKilos: " + str(cantidadDeseasa) + "\nTotal sin impuestos: " + str(totalCompra) +
+              "\nTotal con impuestos: " + str(totalCompraConImpuesto) + "\nForma de pago: Efectivo.\n")
+        cont2 = 0
+        # actualizamos la lista de ventas dirias
+        for j in inventarioDeVentasDiarias:
+            if nombreProducto == inventarioDeVentasDiarias[cont2]['producto']:
+                inventarioDeVentasDiarias[cont2]['cantidad'] = cantidadDeseasa
+                inventarioDeVentasDiarias[cont2]['valor'] = totalCompra
+            cont2 = cont2 + 1
+
     else:
         opcionVentaDeProductos()
 
