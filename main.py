@@ -168,6 +168,5 @@ def opcionCotizacion():
           "\nKilos: " + str(opcionKilos) + "\nTotal sin impuestos: " + str(totalCotizacion) + "\nTotal con impuestos: " +
           str(totalCotizacionConImpuestos) + "\nEsta cotización expira en 4 días.\n")
 
-
 # seleccionarOpciones()
 opcionDeMantenimiento()
