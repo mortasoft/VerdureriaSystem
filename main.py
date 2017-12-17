@@ -36,6 +36,7 @@ inventarioDeVentasDiarias = [{'producto': 'Aguacate', 'cantidad': 0, 'valor': 0}
                              {'producto': 'Tomates', 'cantidad': 0, 'valor': 0},
                              {'producto': 'Uvas', 'cantidad': 0, 'valor': 0},
                              {'producto': 'Zanahorias', 'cantidad': 0, 'valor': 0}]
+totalPrecioDeVenta = 0
 
 
 def ingresoAlSistema():
@@ -71,9 +72,10 @@ def seleccionarOpciones():
         elif opcion == 4:
             opcionInformeDeVentasDiarias()
         elif opcion == 5:
-            return "informe de ganancias diarias"
+            informeDeGananciasDiario()
         elif opcion == 6:
-            return "salir"
+            print("\nEligió la opción de salir, que tenga un buen día. \n¡Hasta luego!")
+            break
 
 
 def opcionDeMantenimiento():
@@ -209,7 +211,7 @@ def opcionCotizacion():
 
 
 def opcionVentaDeProductos():
-    global inventarioDeCotizaciones, inventarioDeVentasDiarias, productos
+    global inventarioDeCotizaciones, inventarioDeVentasDiarias, productos, totalPrecioDeVenta
     cotizacion = input("\nBienvenido a la venta de producto.\n¿Al cliente se le realizó una cotización?\n")
     if cotizacion == "si":
         numCotizacion = int(input("\nDigita el número de la cotización\n"))
@@ -252,6 +254,7 @@ def opcionVentaDeProductos():
                 precioVenta = inventarioProductos[cont]['precio_venta']
             cont = cont + 1
         totalCompra = cantidadDeseasa * precioVenta
+        totalPrecioDeVenta = totalPrecioDeVenta + totalCompra
         totalCompraConImpuesto = (totalCompra * 113) / 100
         print("\nVerdulería la Vencedora S.A\nCajero: admin." +
               "\nFecha: " + str(datetime.datetime.now()) + "\nCliente: " + nombreDelCliente + "\nProducto: " +
@@ -271,7 +274,7 @@ def opcionVentaDeProductos():
 
 
 def opcionInformeDeVentasDiarias():
-    global inventarioDeVentasDiarias
+    global inventarioDeVentasDiarias, totalDeProductosVendidos, totalPrecioDeVenta
     print("\nBienvenido al informe de ventas diarias\n")
     cont = 0
     productoMenosVendido = 100
@@ -295,6 +298,28 @@ def opcionInformeDeVentasDiarias():
     print("Producto más vendido: " + nombreDelProductoMasVendido)
     print("\nProducto menos vendido: " + nombreDelProductoMenosVendido)
     print("\nTotal productos vendidos: " + str(totalDeProductosVendidos))
+
+
+def informeDeGananciasDiario():
+    global inventarioDeVentasDiarias, inventarioProductos, totalPrecioDeVenta
+    cont = 0
+    valorNetoDeCompra = 0
+    for i in inventarioDeVentasDiarias:
+        if inventarioDeVentasDiarias[cont]['cantidad'] > 0:
+            cont2 = 0
+            for j in inventarioProductos:
+                if inventarioDeVentasDiarias[cont]['producto'] == inventarioProductos[cont2]['producto']:
+                    valorNetoDeCompraDeEspecificoProducto = inventarioProductos[cont2]['precio_compra'] * \
+                                                            inventarioDeVentasDiarias[cont]['cantidad']
+                    valorNetoDeCompra = valorNetoDeCompra + valorNetoDeCompraDeEspecificoProducto
+
+                cont2 = cont2 + 1
+        cont = cont + 1
+    gananciaDelDia = totalPrecioDeVenta - valorNetoDeCompra
+    print("Total de precio de compra vendido: " + str(valorNetoDeCompra))
+    print("\nTotal de precio de venta vendido: " + str(totalPrecioDeVenta))
+    print("\nLas ganacias totales corresponden a un monto total de: " + str(gananciaDelDia))
+    seleccionarOpciones()
 
 
 # seleccionarOpciones()
