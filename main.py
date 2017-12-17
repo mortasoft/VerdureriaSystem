@@ -14,6 +14,8 @@ inventarioKilosProductos = []
 inventarioPrecioDeCompra = []
 inventarioPrecioDeVenta = []
 
+inventarioDeCotizaciones = []
+
 
 def ingresoAlSistema():
     global credencialesDeIngreso
@@ -35,14 +37,14 @@ def ingresoAlSistema():
 def seleccionarOpciones():
     opcion = 0
     while opcion != 6:
-        opcion = int(input("Seleccione la opción deseada: \n1. Mantenimiento.\n2. Cotización.3. Venta de productos." +
-                           "\n4. Informe de ventas diarias.\n5. Informe de ganancias diarias.\n6. Salir"))
+        opcion = int(input("\nSeleccione la opción deseada: \n1. Mantenimiento.\n2. Cotización.3. Venta de productos." +
+                           "\n4. Informe de ventas diarias.\n5. Informe de ganancias diarias.\n6. Salir\n"))
         if opcion == 1:
             opcionDeMantenimiento()
         elif opcion == 2:
             opcionCotizacion()
         elif opcion == 3:
-            return "venta de productos"
+            opcionVentaDeProductos()
         elif opcion == 4:
             return "informe de ventas diarias"
         elif opcion == 5:
@@ -59,7 +61,7 @@ def opcionDeMantenimiento():
               "\n16Pepino. 17.Plátano. 18.Sandías 19.Tomates. 20.Uvas. 21.Zanahorias"))
     opcionNombreProducto = productos[opcionProducto]
     opcionAccionPorRealizar = int(
-        input("Para el producto que seleccionó ¿qué acción desea realizar?\n1. Ingreso de productos." +
+        input("\nPara el producto que seleccionó ¿qué acción desea realizar?\n1. Ingreso de productos." +
               "\n2. Modificación de productos.\n3. Modificación de precios."))
     if opcionAccionPorRealizar == 1:
         ingresoDeProductos(opcionNombreProducto)
@@ -71,14 +73,14 @@ def opcionDeMantenimiento():
 
 def ingresoDeProductos(nombreProductoSeleccionado):
     global inventarioProductos
-    opcionKilos = int(input("Digite: \n-¿Cuantos kilos desea añadir al inventario?"))
+    opcionKilos = int(input("\nDigite: \n-¿Cuantos kilos desea añadir al inventario?"))
     opcionPrecioDeCompraDelKilo = int(input("\n-El precio de compra del kilo."))
     opcionPrecioDeVentaDelKilo = int(input("\n-El precio de venta del kilo."))
     opcionFechaDeVencimientoDelPrecioDeVenta = input(
         "\n-Para finalizar, digite la fecha de vencimiento del precio de venta")
 
     print(
-        "El producto es: " + nombreProductoSeleccionado +
+        "\nEl producto es: " + nombreProductoSeleccionado +
         ".\nEl nuevo inventario del producto es: " + str(opcionKilos) + ".\nEl nuevo precio de compra es: " + str(
             opcionPrecioDeCompraDelKilo) +
         ".\nEl nuevo precio de venta es: " + str(
@@ -138,7 +140,7 @@ def modificacionDePrecios(producto):
             print("\nEl nuevo precio del kilo de venta es: " + str(inventarioProductos[cont]['precio_venta']) +
                   "\nEL nuevo precio del kilo de compra es: " + str(inventarioProductos[cont]['precio_compra']))
         cont = cont + 1
-    opcionDeMantenimiento()
+    seleccionarOpciones()
 
 
 def opcionCotizacion():
@@ -163,10 +165,41 @@ def opcionCotizacion():
         cont = cont + 1
     totalCotizacion = opcionKilos * precioVenta
     totalCotizacionConImpuestos = (totalCotizacion * 113) / 100
+    fechaExacta = datetime.datetime.now()
     print("Verduleria la Vencedora S.A.\nCajero: admin.\nN° Cotización: " + str(opcionNumCotizacion) + "\nFecha: " +
-          str(datetime.datetime.now()) + "\nCliente: " + nombreDelCliente + "\nProducto: " + opcionNombreProducto +
-          "\nKilos: " + str(opcionKilos) + "\nTotal sin impuestos: " + str(totalCotizacion) + "\nTotal con impuestos: " +
+          str(fechaExacta) + "\nCliente: " + nombreDelCliente + "\nProducto: " + opcionNombreProducto +
+          "\nKilos: " + str(opcionKilos) + "\nTotal sin impuestos: " + str(
+        totalCotizacion) + "\nTotal con impuestos: " +
           str(totalCotizacionConImpuestos) + "\nEsta cotización expira en 4 días.\n")
+    nuevaCotizacion = {
+        'cajero': 'usuario',
+        'num_cotizacion': opcionNumCotizacion,
+        'fecha': fechaExacta,
+        'cliente': nombreDelCliente,
+        'producto': opcionNombreProducto,
+        'kilos': opcionKilos,
+        'total_sin_impuestos': totalCotizacion,
+        'total_con_impuestos': totalCotizacionConImpuestos
+    }
+    inventarioDeCotizaciones.append(nuevaCotizacion)
+
+
+def opcionVentaDeProductos():
+    global inventarioDeCotizaciones
+    cotizacion = input("\nBienvenido a la venta de producto.\n¿Al cliente se le realizó una cotización?\n")
+    if cotizacion == "si":
+        numCotizacion = int(input("\nDigita el número de la cotización\n"))
+        cont = 0
+        for i in inventarioDeCotizaciones:
+            print("verrrr " + str(inventarioDeCotizaciones[cont]['num_cotizacion']))
+            if numCotizacion == inventarioDeCotizaciones[cont]['num_cotizacion']:
+                print("\nSE VENDIO\n")
+            cont = cont + 1
+    elif cotizacion == "no":
+        return None
+    else:
+        opcionVentaDeProductos()
+
 
 # seleccionarOpciones()
 opcionDeMantenimiento()
