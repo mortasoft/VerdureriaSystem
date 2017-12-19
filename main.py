@@ -49,7 +49,7 @@ def ingresoAlSistema():
                          credencialesDeIngreso['contraseña'] == contraseña]
     if len(validarUsuario) == 0 or len(validarContraseña) == 0:
         print("Su usuario o contraseña es incorrecto, por favor intente de nuevo")
-        seleccionarOpciones()
+        ingresoAlSistema()
         return "invalido"
     else:
         seleccionarOpciones()
@@ -227,6 +227,8 @@ def opcionVentaDeProductos():
                       str(inventarioDeCotizaciones[cont]['total_sin_impuestos']) + "\nTotal con impuestos: " +
                       str(inventarioDeCotizaciones[cont]['total_con_impuestos']) + "\nForma de pago: Efectivo.\n")
                 cont2 = 0
+                totalCompra = inventarioDeCotizaciones[cont]['total_sin_impuestos']
+                totalPrecioDeVenta = totalPrecioDeVenta + totalCompra
                 # actualizamos la lista de ventas dirias
                 for j in inventarioDeVentasDiarias:
                     if inventarioDeCotizaciones[cont]['producto'] == inventarioDeVentasDiarias[cont2]['producto']:
